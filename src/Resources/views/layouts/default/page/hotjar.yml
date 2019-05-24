@@ -1,0 +1,12 @@
+layout:
+  actions:
+    - '@setBlockTheme':
+        themes: 'hotjar.html.twig'
+    - '@add':
+        id: hack_oro_hotjar
+        parentId: head
+        blockType: hack_oro_hotjar
+        prepend: false
+        options:
+            visible: '=data["hack_oro_customer_tracking"].getTracker("hotjar").isEnabled()'
+            site_id: '=data["hack_oro_customer_tracking"].getTracker("hotjar").getSiteId()'

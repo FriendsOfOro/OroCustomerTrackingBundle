@@ -1,0 +1,18 @@
+layout:
+  actions:
+    - '@setBlockTheme':
+        themes: 'google_tag_manager.html.twig'
+    - '@add':
+        id: hack_oro_google_gtm
+        parentId: head
+        blockType: hack_oro_google_gtm
+        options:
+            visible: '=data["hack_oro_customer_tracking"].getTracker("google_gtm").isEnabled()'
+            user_id: '=data["hack_oro_customer_tracking"].getTracker("google_gtm").getUserId()'
+    - '@add':
+          id: hack_oro_google_gtm_noscript
+          parentId: page_header
+          blockType: hack_oro_google_gtm
+          options:
+              visible: '=data["hack_oro_customer_tracking"].getTracker("google_gtm").isEnabled()'
+              user_id: '=data["hack_oro_customer_tracking"].getTracker("google_gtm").getUserId()'

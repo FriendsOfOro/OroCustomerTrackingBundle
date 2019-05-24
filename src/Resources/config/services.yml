@@ -1,0 +1,108 @@
+services:
+    # Layout Data Provider
+    hack_oro_customer_tracking.layout.data_provider.customer_tracking:
+        class: HackOro\CustomerTrackingBundle\Layout\DataProvider\CustomerTrackingDataProvider
+        arguments:
+            - '@hack_oro_customer_tracking.tracker_registry'
+        tags:
+            - { name: layout.data_provider, alias: hack_oro_customer_tracking }
+
+    # Tracker Registry
+    hack_oro_customer_tracking.tracker_registry:
+        class: HackOro\CustomerTrackingBundle\Tracker\TrackerRegistry
+        public: false
+
+    # Abstract Tracker
+    hack_oro_customer_tracking.tracker.abstract_tracker:
+        class: HackOro\CustomerTrackingBundle\Tracker\AbstractTracker
+        abstract: true
+        public: true
+        arguments:
+            - '@oro_config.manager'
+
+    # LogRocket Tracker
+    hack_oro_customer_tracking.tracker.logrocket:
+        class: HackOro\CustomerTrackingBundle\Tracker\LogRocketTracker
+        parent: hack_oro_customer_tracking.tracker.abstract_tracker
+        tags:
+            - { name: hack_oro_customer_tracking.tracker }
+
+    # LogRocket Block Type
+    hack_oro_customer_tracking.layout.block_type.logrocket:
+        parent: oro_layout.block_type.abstract_configurable
+        calls:
+            - [setOptionsConfig, [{app_id: {required: true}}]]
+            - [setName, ['hack_oro_logrocket']]
+        tags:
+            - { name: layout.block_type, alias: hack_oro_logrocket }
+
+    # FullStory Tracker
+    hack_oro_customer_tracking.tracker.fullstory:
+        class: HackOro\CustomerTrackingBundle\Tracker\FullStoryTracker
+        parent: hack_oro_customer_tracking.tracker.abstract_tracker
+        tags:
+            - { name: hack_oro_customer_tracking.tracker }
+
+    # FullStory Block Type
+    hack_oro_customer_tracking.layout.block_type.fullstory:
+        parent: oro_layout.block_type.abstract_configurable
+        calls:
+            - [setName, ['hack_oro_fullstory']]
+            -
+                - setOptionsConfig
+                -
+                    -
+                        org: {required: true}
+                        host: {required: true}
+                        debug_enabled: {required: true}
+                        namespace: {required: true}
+        tags:
+            - { name: layout.block_type, alias: hack_oro_fullstory }
+
+    # Google Analytics Tracker
+    hack_oro_customer_tracking.tracker.google_analytics:
+        class: HackOro\CustomerTrackingBundle\Tracker\GoogleAnalyticsTracker
+        parent: hack_oro_customer_tracking.tracker.abstract_tracker
+        tags:
+            - { name: hack_oro_customer_tracking.tracker }
+
+    # Google Analytics Block Type
+    hack_oro_customer_tracking.layout.block_type.google_analytics:
+        parent: oro_layout.block_type.abstract_configurable
+        calls:
+            - [setOptionsConfig, [{user_id: {required: true}}]]
+            - [setName, ['hack_oro_google_ga']]
+        tags:
+            - { name: layout.block_type, alias: hack_oro_google_ga }
+
+    # Google Tag Manager (GTM) Tracker
+    hack_oro_customer_tracking.tracker.google_gtm:
+        class: HackOro\CustomerTrackingBundle\Tracker\GoogleGTMTracker
+        parent: hack_oro_customer_tracking.tracker.abstract_tracker
+        tags:
+            - { name: hack_oro_customer_tracking.tracker }
+
+    # Google Tag Manager (GTM) Block Type
+    hack_oro_customer_tracking.layout.block_type.google_gtm:
+        parent: oro_layout.block_type.abstract_configurable
+        calls:
+            - [setOptionsConfig, [{user_id: {required: true}}]]
+            - [setName, ['hack_oro_google_gtm']]
+        tags:
+            - { name: layout.block_type, alias: hack_oro_google_gtm }
+
+    # Hotjar Tracker
+    hack_oro_customer_tracking.tracker.hotjar:
+        class: HackOro\CustomerTrackingBundle\Tracker\HotjarTracker
+        parent: hack_oro_customer_tracking.tracker.abstract_tracker
+        tags:
+            - { name: hack_oro_customer_tracking.tracker }
+
+    # Hotjar Block Type
+    hack_oro_customer_tracking.layout.block_type.hotjar:
+        parent: oro_layout.block_type.abstract_configurable
+        calls:
+            - [setOptionsConfig, [{site_id: {required: true}}]]
+            - [setName, ['hack_oro_hotjar']]
+        tags:
+            - { name: layout.block_type, alias: hack_oro_hotjar }

@@ -1,0 +1,12 @@
+layout:
+  actions:
+    - '@setBlockTheme':
+        themes: 'logrocket.html.twig'
+    - '@add':
+        id: hack_oro_logrocket
+        parentId: head
+        blockType: hack_oro_logrocket
+        prepend: false
+        options:
+            visible: '=data["hack_oro_customer_tracking"].getTracker("logrocket").isEnabled()'
+            app_id: '=data["hack_oro_customer_tracking"].getTracker("logrocket").getAppId()'

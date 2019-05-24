@@ -1,0 +1,2 @@
+bundles:
+  - { name: HackOro\CustomerTrackingBundle\HackOroCustomerTrackingBundle, priority: 1000 }

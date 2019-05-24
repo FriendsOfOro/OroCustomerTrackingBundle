@@ -1,0 +1,20 @@
+{% block _hack_oro_logrocket_widget %}
+    {% if (app_id) %}
+        {# This script has to be parse/render blocking #}
+        <!-- LogRocket -->
+        <script src="//cdn.logrocket.io/LogRocket.min.js" crossorigin="anonymous"></script>
+        <script>
+            var isDev = window.location.hostname.search('.local') >= 0;
+
+            if (window.LogRocket && !isDev) {
+                {# Don't record sessions on developer environments #}
+                window.LogRocket.init('{{ app_id }}');
+
+                {% if app.user is not null %}
+                    window.LogRocket.identify("{{ app.user.email }}", {});
+                {% endif %}
+            }
+        </script>
+        <!-- End LogRocket -->
+    {% endif %}
+{% endblock %}

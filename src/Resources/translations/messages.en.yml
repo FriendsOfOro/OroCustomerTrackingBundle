@@ -1,0 +1,47 @@
+hack_oro:
+    label: Friends of Oro
+    customer_tracking:
+        label: Customer Tracking / Analytics
+        configuration:
+            label: Customer Tracking Configuration
+        google_ga:
+            label: Google Analytics (GA)
+            is_enabled:
+                label: Google Analytics Enabled
+            user_id:
+                label: Google Analytics User ID
+        google_gtm:
+            label: Google Tag Manager (GTM)
+            is_enabled:
+                label: GTM Enabled
+            user_id:
+                label: GTM User ID
+        logrocket:
+            label: LogRocket
+            is_enabled:
+                label: LogRocket Enabled
+            app_id:
+                label: LogRocket App ID
+                help: >
+                    You can find your LogRocket App ID (appID) on
+                    <a href="https://app.logrocket.com" target="_blank">https://app.logrocket.com</a><br>
+                    eg: <em>yourCompany/yourClient</em>
+        fullstory:
+            label: FullStory
+            is_enabled:
+                label: FullStory Enabled
+            org:
+                label: FullStory Organization (required)
+                help: >
+                    You can find the FullStory setup instructions here:
+                    <a href="https://help.fullstory.com/using/recording-snippet" target="_blank">https://help.fullstory.com/using/recording-snippet</a>
+            debug_enabled:
+                label: FullStory Debug Enabled
+            namespace:
+                label: FullStory Namespace (optional)
+        hotjar:
+            label: Hotjar
+            is_enabled:
+                label: Hotjar Enabled
+            site_id:
+                label: Hotjar Site ID
