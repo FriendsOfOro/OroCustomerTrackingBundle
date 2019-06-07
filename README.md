@@ -23,16 +23,6 @@ Installation and Usage
 -------------------
 **NOTE: Adjust instructions as needed for your local environment**
 
-1. Add to Composer repository list in `composer.json`:
-    ```json
-    "repositories": {
-       "customer-tracking-bundle": {
-            "type": "vcs",
-            "url": "https://github.com/friendsoforo/OroCustomerTrackingBundle.git",
-            "no-api": true
-       }          
-    }
-    ```
 1. Install via Composer:
     ```bash
     composer require friendsoforo/oro-customer-tracking-bundle
