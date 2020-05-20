@@ -27,14 +27,6 @@ class Configuration implements ConfigurationInterface
     const FULLSTORY_DEBUG_ENABLED = 'fullstory_debug_enabled';
     const FULLSTORY_NAMESPACE = 'fullstory_namespace';
 
-    // Google Analytics
-    const GOOGLE_GA_IS_ENABLED = 'google_ga_is_enabled';
-    const GOOGLE_GA_USER_ID = 'google_ga_user_id';
-
-    // Google Tag Manager
-    const GOOGLE_GTM_IS_ENABLED = 'google_gtm_is_enabled';
-    const GOOGLE_GTM_USER_ID = 'google_gtm_user_id';
-
     // Hotjar
     const HOTJAR_IS_ENABLED = 'hotjar_is_enabled';
     const HOTJAR_SITE_ID = 'hotjar_site_id';
@@ -61,10 +53,6 @@ class Configuration implements ConfigurationInterface
                     'type' => 'scalar',
                     'value' => FullStoryTracker::DEFAULT_NAMESPACE,
                 ],
-                self::GOOGLE_GA_IS_ENABLED        => ['type' => 'boolean', 'value' => false],
-                self::GOOGLE_GA_USER_ID           => ['type' => 'scalar', 'value' => null],
-                self::GOOGLE_GTM_IS_ENABLED       => ['type' => 'boolean', 'value' => false],
-                self::GOOGLE_GTM_USER_ID          => ['type' => 'scalar', 'value' => null],
                 self::HOTJAR_IS_ENABLED           => ['type' => 'boolean', 'value' => false],
                 self::HOTJAR_SITE_ID              => ['type' => 'scalar', 'value' => null],
             ]
