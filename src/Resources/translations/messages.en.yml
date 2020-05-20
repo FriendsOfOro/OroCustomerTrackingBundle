@@ -4,18 +4,6 @@ hack_oro:
         label: Customer Tracking / Analytics
         configuration:
             label: Customer Tracking Configuration
-        google_ga:
-            label: Google Analytics (GA)
-            is_enabled:
-                label: Google Analytics Enabled
-            user_id:
-                label: Google Analytics User ID
-        google_gtm:
-            label: Google Tag Manager (GTM)
-            is_enabled:
-                label: GTM Enabled
-            user_id:
-                label: GTM User ID
         logrocket:
             label: LogRocket
             is_enabled:

@@ -5,10 +5,6 @@ system_configuration:
         hack_oro_customer_tracking:
             icon: 'fa-eye'
             title: 'hack_oro.customer_tracking.label'
-        google_ga:
-            title: 'hack_oro.customer_tracking.google_ga.label'
-        google_gtm:
-            title: 'hack_oro.customer_tracking.google_gtm.label'
         logrocket:
             title: 'hack_oro.customer_tracking.logrocket.label'
         fullstory:
@@ -16,28 +12,6 @@ system_configuration:
         hotjar:
             title: 'hack_oro.customer_tracking.hotjar.label'
     fields:
-        hack_oro_customer_tracking.google_ga_is_enabled:
-            data_type: boolean
-            type: Oro\Bundle\ConfigBundle\Form\Type\ConfigCheckbox
-            priority: 30
-            options:
-                label: 'hack_oro.customer_tracking.google_ga.is_enabled.label'
-        hack_oro_customer_tracking.google_ga_user_id:
-            data_type: string
-            type: Symfony\Component\Form\Extension\Core\Type\TextType
-            options:
-                label: 'hack_oro.customer_tracking.google_ga.user_id.label'
-        hack_oro_customer_tracking.google_gtm_is_enabled:
-            data_type: boolean
-            type: Oro\Bundle\ConfigBundle\Form\Type\ConfigCheckbox
-            priority: 30
-            options:
-                label: 'hack_oro.customer_tracking.google_gtm.is_enabled.label'
-        hack_oro_customer_tracking.google_gtm_user_id:
-            data_type: string
-            type: Symfony\Component\Form\Extension\Core\Type\TextType
-            options:
-                label: 'hack_oro.customer_tracking.google_gtm.user_id.label'
         hack_oro_customer_tracking.logrocket_is_enabled:
             data_type: boolean
             type: Oro\Bundle\ConfigBundle\Form\Type\ConfigCheckbox
@@ -93,14 +67,6 @@ system_configuration:
                         children:
                             hack_oro_customer_tracking:
                                 children:
-                                    google_ga:
-                                        children:
-                                            - hack_oro_customer_tracking.google_ga_is_enabled
-                                            - hack_oro_customer_tracking.google_ga_user_id
-                                    google_gtm:
-                                        children:
-                                            - hack_oro_customer_tracking.google_gtm_is_enabled
-                                            - hack_oro_customer_tracking.google_gtm_user_id
                                     logrocket:
                                         children:
                                             - hack_oro_customer_tracking.logrocket_is_enabled
@@ -123,14 +89,6 @@ system_configuration:
                         children:
                             hack_oro_customer_tracking:
                                 children:
-                                    google_ga:
-                                        children:
-                                            - hack_oro_customer_tracking.google_ga_is_enabled
-                                            - hack_oro_customer_tracking.google_ga_user_id
-                                    google_gtm:
-                                        children:
-                                            - hack_oro_customer_tracking.google_gtm_is_enabled
-                                            - hack_oro_customer_tracking.google_gtm_user_id
                                     logrocket:
                                         children:
                                             - hack_oro_customer_tracking.logrocket_is_enabled

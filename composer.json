@@ -1,10 +1,10 @@
 {
     "name": "friendsoforo/oro-customer-tracking-bundle",
     "license": "MIT",
-    "description": "Oro Bundle to inject Tracking Code (eg Google Analytics, GTM, LogRocket, Hotjar, etc)",
+    "description": "Oro Bundle to inject Tracking Code (eg LogRocket, Hotjar, FullStory, etc)",
     "type": "project",
     "require": {
-        "oro/platform": "3.*"
+        "oro/platform": "4.1.*"
     },
     "autoload": {
         "psr-4": { "HackOro\\CustomerTrackingBundle\\": "./src/" }
