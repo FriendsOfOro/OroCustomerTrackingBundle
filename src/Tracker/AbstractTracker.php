@@ -31,6 +31,6 @@ abstract class AbstractTracker
      */
     public function getConfigValue(string $name, string $default = null)
     {
-        return $this->configManager->get(Configuration::getConfigKeyByName($name), $default);
+        return $this->configManager->get(Configuration::getConfigKeyByName($name)) ?? $default;
     }
 }
