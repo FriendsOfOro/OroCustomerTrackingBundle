@@ -38,11 +38,10 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root(HackOroCustomerTrackingExtension::ALIAS);
+        $treeBuilder = new TreeBuilder(HackOroCustomerTrackingExtension::ALIAS);
 
         SettingsBuilder::append(
-            $rootNode,
+            $treeBuilder->getRootNode(),
             [
                 self::LOGROCKET_IS_ENABLED        => ['type' => 'boolean', 'value' => false],
                 self::LOGROCKET_APP_ID            => ['type' => 'scalar', 'value' => null],
