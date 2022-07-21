@@ -33,7 +33,7 @@ class FullStoryTracker extends AbstractTracker
      */
     public function isEnabled(): bool
     {
-        return (bool) $this->getConfigValue(Configuration::FULLSTORY_IS_ENABLED, false);
+        return (bool) $this->getConfigValue(Configuration::FULLSTORY_IS_ENABLED);
     }
 
     /**
@@ -49,7 +49,7 @@ class FullStoryTracker extends AbstractTracker
      */
     public function getDebugEnabled(): bool
     {
-        return (bool) $this->getConfigValue(Configuration::FULLSTORY_DEBUG_ENABLED, false);
+        return (bool) $this->getConfigValue(Configuration::FULLSTORY_DEBUG_ENABLED);
     }
 
     /**
@@ -57,7 +57,7 @@ class FullStoryTracker extends AbstractTracker
      */
     public function getNamespace(): ?string
     {
-        return $this->getConfigValue(Configuration::FULLSTORY_NAMESPACE, self::DEFAULT_NAMESPACE);
+        return $this->getConfigValue(Configuration::FULLSTORY_NAMESPACE) ?? self::DEFAULT_NAMESPACE;
     }
 
     /**

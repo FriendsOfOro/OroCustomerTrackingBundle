@@ -1,22 +1,22 @@
-Oro Customer Tracking Bundle
+OroCommerce Customer Tracking Bundle
 ==============================
 This bundle adds support for user tracking code injection.
 
 Currently supported trackers are:
 * [LogRocket](https://logrocket.com/)
 * [Hotjar](https://www.hotjar.com/)
-* [Fullstory](https://www.fullstory.com/)
+* [FullStory](https://www.fullstory.com/)
 
 For applicable trackers, the currently logged-in user will also be provided with the tracking payload.
 
 NOTE: Google Analytics support has been removed as there is a superior bundle provided by Oro:
 [Oro Google Tag Manager Bundle](https://github.com/oroinc/google-tag-manager)
 
-Inspired by the [OroCommerce Analytics/GTM Bundle](https://github.com/DivanteLtd/orocommerce-ga) by DivanteLtd (currently unmaintained and Oro 3.X/4.X incompatible)
+Inspired by the [OroCommerce Analytics/GTM Bundle](https://github.com/DivanteLtd/orocommerce-ga) by DivanteLtd (unmaintained)
 
 Requirements
 -------------------
-* Oro Platform 4.X
+* OroCommerce 5.0.X
 
 Installation and Usage
 -------------------
