@@ -33,10 +33,8 @@ class Configuration implements ConfigurationInterface
 
     /**
      * Generates the configuration tree builder.
-     *
-     * @return TreeBuilder The tree builder
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder(HackOroCustomerTrackingExtension::ALIAS);
 
@@ -59,12 +57,7 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 
-
-    /**
-     * @param string $key
-     * @return string
-     */
-    public static function getConfigKeyByName($key)
+    public static function getConfigKeyByName(string $key): string
     {
         return implode(ConfigManager::SECTION_MODEL_SEPARATOR, [HackOroCustomerTrackingExtension::ALIAS, $key]);
     }

@@ -20,17 +20,11 @@ class HotjarTracker extends AbstractTracker
         return self::NAME;
     }
 
-    /**
-     * @return bool
-     */
     public function isEnabled(): bool
     {
         return (bool) $this->getConfigValue(Configuration::HOTJAR_IS_ENABLED);
     }
 
-    /**
-     * @return string
-     */
     public function getSiteId(): ?string
     {
         return $this->getConfigValue(Configuration::HOTJAR_SITE_ID);

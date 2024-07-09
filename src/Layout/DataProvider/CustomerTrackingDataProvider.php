@@ -14,19 +14,14 @@ use HackOro\CustomerTrackingBundle\Tracker\TrackerRegistry;
 
 class CustomerTrackingDataProvider
 {
-    /** @var TrackerRegistry */
-    private $trackerRegistry;
+    private TrackerRegistry $trackerRegistry;
 
     public function __construct(TrackerRegistry $trackerRegistry)
     {
         $this->trackerRegistry = $trackerRegistry;
     }
 
-    /**
-     * @param string $name
-     * @return AbstractTracker|null
-     */
-    public function getTracker(string $name)
+    public function getTracker(string $name): ?AbstractTracker
     {
         return $this->trackerRegistry->getTracker($name);
     }

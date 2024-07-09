@@ -16,7 +16,7 @@ Inspired by the [OroCommerce Analytics/GTM Bundle](https://github.com/DivanteLtd
 
 Requirements
 -------------------
-* OroCommerce 5.0.X
+* OroCommerce 6.0.X
 
 Installation and Usage
 -------------------

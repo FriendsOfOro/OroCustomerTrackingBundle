@@ -16,14 +16,12 @@ class TrackerRegistry
     /**
      * @var AbstractTracker[]
      */
-    protected $trackers = [];
+    protected array $trackers = [];
 
     /**
      * Add tracker to the registry
-     *
-     * @param AbstractTracker $tracker
      */
-    public function addTracker(AbstractTracker $tracker)
+    public function addTracker(AbstractTracker $tracker): void
     {
         if (array_key_exists($tracker->getName(), $this->trackers)) {
             throw new LogicException(
@@ -37,7 +35,7 @@ class TrackerRegistry
     /**
      * @return AbstractTracker[]
      */
-    public function getTrackers()
+    public function getTrackers(): array
     {
         return $this->trackers;
     }
@@ -45,11 +43,9 @@ class TrackerRegistry
     /**
      * Get tracker by name
      *
-     * @param string $name
-     * @return AbstractTracker
      * @throws LogicException Throw exception when tracker with specified name not found
      */
-    public function getTracker($name)
+    public function getTracker(string $name): AbstractTracker
     {
         if (!array_key_exists($name, $this->trackers)) {
             throw new LogicException(

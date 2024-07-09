@@ -14,8 +14,7 @@ use Oro\Bundle\ConfigBundle\Config\ConfigManager;
 
 abstract class AbstractTracker
 {
-    /** @var ConfigManager */
-    protected $configManager;
+    protected ConfigManager $configManager;
 
     public function __construct(ConfigManager $configManager)
     {
@@ -24,12 +23,7 @@ abstract class AbstractTracker
 
     abstract public function getName() : string;
 
-    /**
-     * @param string $name
-     * @param bool $default
-     * @return mixed
-     */
-    public function getConfigValue(string $name, $default = false)
+    public function getConfigValue(string $name, bool $default = false): mixed
     {
         return $this->configManager->get(Configuration::getConfigKeyByName($name), $default);
     }

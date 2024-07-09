@@ -4,7 +4,7 @@
     "description": "OroCommerce Bundle to inject Tracking Code (eg LogRocket, Hotjar, FullStory, etc)",
     "type": "project",
     "require": {
-        "oro/commerce": "5.0.*"
+        "oro/commerce": "6.0.*"
     },
     "autoload": {
         "psr-4": { "HackOro\\CustomerTrackingBundle\\": "./src/" }

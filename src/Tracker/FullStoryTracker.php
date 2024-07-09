@@ -28,41 +28,26 @@ class FullStoryTracker extends AbstractTracker
         return self::NAME;
     }
 
-    /**
-     * @return bool
-     */
     public function isEnabled(): bool
     {
         return (bool) $this->getConfigValue(Configuration::FULLSTORY_IS_ENABLED);
     }
 
-    /**
-     * @return string
-     */
     public function getOrg(): ?string
     {
         return $this->getConfigValue(Configuration::FULLSTORY_ORG);
     }
 
-    /**
-     * @return bool
-     */
     public function getDebugEnabled(): bool
     {
         return (bool) $this->getConfigValue(Configuration::FULLSTORY_DEBUG_ENABLED);
     }
 
-    /**
-     * @return string
-     */
     public function getNamespace(): ?string
     {
         return $this->getConfigValue(Configuration::FULLSTORY_NAMESPACE) ?? self::DEFAULT_NAMESPACE;
     }
 
-    /**
-     * @return string
-     */
     public function getHost(): ?string
     {
         return self::HOST;

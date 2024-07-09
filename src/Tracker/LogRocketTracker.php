@@ -22,8 +22,6 @@ class LogRocketTracker extends AbstractTracker
 
     /**
      * Is LogRocket enabled?
-     *
-     * @return bool
      */
     public function isEnabled(): bool
     {
@@ -32,8 +30,6 @@ class LogRocketTracker extends AbstractTracker
 
     /**
      * What is the LogRocket APP ID?
-     *
-     * @return string
      */
     public function getAppId(): ?string
     {
